@@ -1,6 +1,6 @@
 {
   "name": "samiprofile",
-  "homepage": "https://SamiSahil.github.io/samiprofile",  
+  "homepage": "https://SamiSahil.github.io/samiprofile",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -31,5 +31,17 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
+  },
+  "description": "",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamiSahil/samiprofile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamiSahil/samiprofile/issues"
   }
 }
