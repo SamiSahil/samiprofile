@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import CursorBlob from './CursorBlob'; // Add this import
+import CursorBlob from './CursorBlob';
 
 // --- Image Imports ---
 import profilePicture from './assets/images/profile-pic.png';
@@ -9,6 +9,7 @@ import projectAlgoViz from './assets/images/algoviz.png';
 import projectCampusNav from './assets/images/campus-navigator.jpg';
 import projectCleanSheet from './assets/images/cleansheet.jpg';
 import profilePicture2 from './assets/images/sAp.png';
+
 // --- SVG Icons ---
 const GitHubIcon = (props) => (
   <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeWidth="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.5a13.93 13.93 0 0 0-6 0c-2.73-1.85-3.91-.5-3.91-.5A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -110,7 +111,7 @@ const ScrollTopBtn = () => {
   ) : null;
 };
 
-const FormInput = ({ icon, type = 'text', name, placeholder, ...rest }) => { // 1. Add ...rest
+const FormInput = ({ icon, type = 'text', name, placeholder, ...rest }) => {
   const InputComponent = type === 'textarea' ? 'textarea' : 'input';
   return (
     <div className="relative flex items-center">
@@ -121,7 +122,7 @@ const FormInput = ({ icon, type = 'text', name, placeholder, ...rest }) => { // 
         placeholder={placeholder}
         rows={type === 'textarea' ? 4 : undefined}
         className="w-full pl-12 pr-4 py-3 rounded-xl bg-surfaceLight dark:bg-surface border border-gray-200 dark:border-[#1C2026] text-textLight dark:text-textDark placeholder-mutedLight dark:placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary"
-        {...rest} // 2. Spread the rest of the props here
+        {...rest}
       />
     </div>
   );
@@ -138,7 +139,7 @@ const StatItem = ({ value, label }) => (
 // --- Main Components ---
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navItems = ["Home", "About", "Projects", "Skills", "Experience", "Achievements", "Contact"];
+  const navItems = ["Home", "About", "Skills", "Experience", "Achievements", "Projects", "Contact"];
   const handleNavClick = (e, item) => {
     e.preventDefault();
     scrollToSection(item.toLowerCase());
@@ -148,12 +149,11 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-bgLight/80 dark:bg-bgDark/80 backdrop-blur-lg dark:border-white/5">
       <div className="relative flex items-center justify-between px-4 py-4 mx-auto max-w-7xl">
-        {/* --- MODIFICATION: Added animated-text-gradient class --- */}
         <span 
-          className="text-4xl font-bold cursor-pointer font-jakarta animated-text-gradient" 
+          className="text-5xl font-bold cursor-pointer font-lugrasimo animated-text-gradient" 
           onClick={() => scrollToSection('home')}
         >
-          Samiuzzaman Sahil..
+          Samiuzzaman Sahil
         </span>
         <div className="flex items-center gap-4">
           <button onClick={toggleTheme} className="p-2 transition-colors duration-200 rounded-full text-mutedLight dark:text-muted hover:bg-gray-200/50 dark:hover:bg-white/10" aria-label="Toggle theme">
@@ -181,28 +181,27 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
 const Hero = () => (
   <section id="home" className="flex items-center min-h-screen px-4 sm:px-6 lg:px-8">
     <div className="grid items-center grid-cols-1 gap-12 mx-auto max-w-7xl md:grid-cols-2">
-      <div className="text-center md:text-left">
-        {/* --- MODIFICATION: Added animated-text-gradient class to h1 --- */}
+      <div className="text-center md:text-left">  
         <motion.h1 
-          className="mb-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl font-jakarta animated-text-gradient" 
+          className="mb-3 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-5xl font-federo animated-text-gradient" 
           initial={{ y: 20, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }} 
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Hi,  
-          
+          <br />
           I design & build digital experiences.
-         
         </motion.h1>
         
-        {/* --- MODIFICATION: Added a static gradient to the subheading --- */}
         <motion.p 
-          className="mb-8 text-lg font-medium text-transparent bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text"
+          className="mb-8 text-lg font-medium text-transparent bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text"
           initial={{ y: 20, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }} 
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Designer • Developer • Problem-solver
+         • Computer Science Student 
+          <br />• Aspiring Software Engineer 
+          <br/>• Problem-solver
         </motion.p>
         
         <motion.div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
@@ -371,14 +370,8 @@ const Achievements = () => (
     </div>
   </AnimatedSection>
 );
-// App.jsx
-
-// ... (keep all the other components and code as they are)
-
-// --- MODIFIED Contact Component ---
 
 const Contact = () => {
-  // --- MODIFICATION: Add state to manage form inputs, submission status, and message ---
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -388,7 +381,6 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
 
-  // --- MODIFICATION: Handle input changes ---
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -396,13 +388,11 @@ const Contact = () => {
     });
   };
 
-  // --- MODIFICATION: Handle form submission ---
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
     setIsSubmitting(true);
     setResponseMessage('');
 
-    // The data to be sent to Web3Forms
     const dataToSend = {
       ...formData,
       access_key: '922ebe51-1b88-4f9f-93b7-dacfddb2c86b'
@@ -421,7 +411,7 @@ const Contact = () => {
       const result = await response.json();
       if (result.success) {
         setResponseMessage("Message sent successfully! I'll get back to you soon.");
-        setFormData({ name: '', email: '', phone: '', message: '' }); // Clear the form
+        setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         setResponseMessage(`Error: ${result.message}`);
       }
@@ -440,9 +430,7 @@ const Contact = () => {
         </h2>
         <div className="grid max-w-6xl grid-cols-1 gap-12 mx-auto md:grid-cols-2">
           <div className="flex flex-col">
-            {/* --- MODIFICATION: Attach the handleSubmit function to the form --- */}
             <form className="space-y-6" onSubmit={handleSubmit}>
-              {/* --- MODIFICATION: Add value and onChange to all inputs --- */}
               <FormInput icon={<UserIcon className="w-5 h-5 text-primary" />} name="name" placeholder="Your name" value={formData.name} onChange={handleChange} />
               <FormInput icon={<MailIcon className="w-5 h-5 text-primary" />} type="email" name="email" placeholder="Email address" value={formData.email} onChange={handleChange} />
               <FormInput icon={<PhoneIcon className="w-5 h-5 text-primary" />} name="phone" placeholder="Phone (optional)" value={formData.phone} onChange={handleChange} />
@@ -453,7 +441,6 @@ const Contact = () => {
                 </Button>
               </div>
             </form>
-            {/* --- MODIFICATION: Add a place to show the response message --- */}
             {responseMessage && <p className="mt-4 text-center">{responseMessage}</p>}
           </div>
           <div className="flex flex-col justify-center">
@@ -470,8 +457,6 @@ const Contact = () => {
     </AnimatedSection>
   );
 };
-
-// ... (rest of your App.jsx file remains the same)
 
 const Footer = () => (
   <footer className="py-8 text-center border-t border-gray-200 dark:border-[#1C2026] text-mutedLight dark:text-muted">
@@ -508,17 +493,16 @@ export default function App() {
 
   return (
     <div className={"font-inter bg-bgLight text-textLight dark:bg-bgDark dark:text-textDark"}>
-           <CursorBlob /> {/* Add the CursorBlob component here */}
-
+      <CursorBlob />
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main className="px-2 mx-auto max-w-7xl sm:px-4">
         {/* --- MODIFICATION: The order of sections has been changed --- */}
         <Hero />
         <About />
-        <Projects />
         <Skills />
         <Experience />
         <Achievements />
+        <Projects />
         <Contact />
       </main>
       <Footer />

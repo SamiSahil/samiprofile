@@ -7,19 +7,22 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // ...
+        // --- MODIFICATION: Added new font families ---
+        inter: ['Inter', 'sans-serif'],
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+        lugrasimo: ['Lugrasimo', 'cursive'],
+        federo: ['Federo', 'sans-serif'],
       },
       colors: {
-        // --- MODIFICATION: Change the primary color here ---
-        primary: '#0ea5e9', // Was '#6F7DFF'
+        primary: '#0ea5e9', 
 
-        // Dark theme colors (no changes needed)
+        // Dark theme colors
         surface: '#111318',
-        accent: '#6F7DFF', // This can be left or changed, but primary is what's used
+        accent: '#6F7DFF',
         muted: '#A7AAB2',
         bgDark: '#0B0C10',
         textDark: '#EDEFF3',
-        // Light theme colors (no changes needed)
+        // Light theme colors
         bgLight: '#FFFFFF',
         textLight: '#111318',
         mutedLight: '#6B7280',
