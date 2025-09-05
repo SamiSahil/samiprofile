@@ -153,7 +153,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-bgLight/80 dark:bg-bgDark/80 backdrop-blur-lg dark:border-white/5">
       <div className="relative flex items-center justify-between px-4 py-4 mx-auto max-w-7xl">
         <span 
-          className="text-5xl font-bold cursor-pointer font-lugrasimo animated-text-gradient" 
+          className="text-3xl font-bold cursor-pointer font-lugrasimo animated-text-gradient" 
           onClick={() => scrollToSection('home')}
         >
           Samiuzzaman Sahil
@@ -183,10 +183,11 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
 
 const Hero = () => (
   <section id="home" className="flex items-center min-h-screen px-4 sm:px-6 lg:px-8">
-    <div className="grid items-center grid-cols-1 gap-12 mx-auto max-w-7xl md:grid-cols-2">
-      <div className="text-center md:text-left">  
+    {/* --- MODIFICATION: Changed grid to flex and reversed the column order for mobile --- */}
+    <div className="flex flex-col-reverse items-center gap-12 mx-auto max-w-7xl md:flex-row">
+      <div className="w-full text-center md:w-1/2 md:text-left">  
         <motion.h1 
-          className="mb-3 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-5xl font-federo animated-text-gradient" 
+          className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-5xl font-federo animated-text-gradient" 
           initial={{ y: 20, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }} 
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -233,7 +234,8 @@ const Hero = () => (
           <Button href="mailto:samiujjaman643@gmail.com">Hire me</Button>
         </motion.div>
       </div>
-      <motion.div className="flex justify-center md:justify-end" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}>
+     
+      <motion.div className="flex justify-center w-full md:w-1/2 md:justify-end" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}>
         <div className="relative w-full max-w-sm">
           <img src={profilePicture} alt="Samiuzzaman Sahil" className="object-cover w-full h-auto shadow-2xl rounded-3xl shadow-primary/20" loading="lazy" />
         </div>
