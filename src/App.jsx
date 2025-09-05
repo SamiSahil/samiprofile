@@ -17,6 +17,9 @@ const GitHubIcon = (props) => (
 const LinkedInIcon = (props) => (
   <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle><path strokeWidth="2" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path></svg>
 );
+const FacebookIcon = (props) => (
+  <svg {...props} fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v7.028C18.343 21.128 22 16.991 22 12z"></path></svg>
+);
 const MailIcon = (props) => (
   <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path strokeWidth="2" d="m22 7-8.97-5.73a1.91 1.91 0 0 0-2.06 0L2 7"></path></svg>
 );
@@ -203,7 +206,26 @@ const Hero = () => (
           <br />• Aspiring Software Engineer 
           <br/>• Problem-solver
         </motion.p>
-        
+                <motion.div 
+          className="flex justify-center mb-8 md:justify-start"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="flex items-center gap-6">
+            <a href="https://github.com/SamiSahil" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
+              <GitHubIcon className="w-8 h-8" />
+            </a>
+            <a href="https://linkedin.com/in/samiuzzamansahil" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
+              <LinkedInIcon className="w-8 h-8" />
+            </a>
+           
+            <a href="https://www.facebook.com/share/19kpWKsBPL/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
+              <FacebookIcon className="w-8 h-8" />
+            </a>
+          </div>
+        </motion.div>
+
         <motion.div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
           <Button primary href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects');}} className="text-white border-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
             See work
