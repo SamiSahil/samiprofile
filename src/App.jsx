@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import CursorBlob from './CursorBlob';
 
 // --- Image Imports ---
-import profilePicture from './assets/images/profile-pic.png';
+import profilePicture from './assets/images/IMG_4873.jpg';
 import projectAlgoViz from './assets/images/algoviz.png';
 import projectCampusNav from './assets/images/campus-navigator.jpg';
 import projectCleanSheet from './assets/images/cleansheet.jpg';
@@ -173,7 +173,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                 {item}
               </a>
             ))}
-            <Button href="#" primary newTab className="w-full text-center">Resume</Button>
+           <Button href="/resume.pdf" primary newTab className="w-full text-center">Resume</Button>
           </div>
         )}
       </div>
@@ -258,7 +258,7 @@ const About = () => (
       </div>
       <div className="grid items-start max-w-6xl grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
         <motion.div className="flex justify-center" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: "easeOut" }}>
-          <img src={profilePicture2} alt="Samiuzzaman Sahil" className="object-cover w-full h-auto max-w-md shadow-xl rounded-2xl" loading="lazy"/>
+          <img src={profilePicture2} alt="Samiuzzaman Sahil" className="object-cover rounded-full shadow-xl w-80 h-80" loading="lazy"/>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}>
           <p className="mb-6 text-base sm:text-lg text-mutedLight dark:text-muted">
@@ -278,6 +278,7 @@ const About = () => (
     </div>
   </AnimatedSection>
 );
+
 
 const ProjectCard = ({ project }) => (
   <div className="bg-surfaceLight dark:bg-surface rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-[#1C2026] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 w-full max-w-md mx-auto">
