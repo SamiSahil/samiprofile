@@ -173,7 +173,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                 {item}
               </a>
             ))}
-           <Button href="/resume.pdf" primary newTab className="w-full text-center">Resume</Button>
+            <Button href="/samiprofile/resume.pdf" primary newTab className="w-full text-center">Resume</Button>
           </div>
         )}
       </div>
