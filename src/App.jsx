@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import Typewriter from 'typewriter-effect'; 
 import { useInView } from 'react-intersection-observer';
 import CursorBlob from './CursorBlob';
 
@@ -183,19 +184,25 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
 
 const Hero = () => (
   <section id="home" className="flex items-center min-h-screen px-4 sm:px-6 lg:px-8">
-    {/* --- MODIFICATION: Changed grid to flex and reversed the column order for mobile --- */}
     <div className="flex flex-col-reverse items-center gap-12 mx-auto max-w-7xl md:flex-row">
       <div className="w-full text-center md:w-1/2 md:text-left">  
-        <motion.h1 
-          className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-5xl font-federo animated-text-gradient" 
-          initial={{ y: 20, opacity: 0 }} 
-          animate={{ y: 0, opacity: 1 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <div 
+          className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-4xl font-federo animated-text-gradient"
         >
-          Hi,  
-          <br />
-          I design & build digital experiences.
-        </motion.h1>
+          <Typewriter
+            options={{
+              strings: [
+                "Hi,<br />I design & build digital experiences.",
+                "Hi,<br />I'm a Full-Stack Developer.",
+                "Hi,<br />I bring ideas to life with code."
+              ],
+              autoStart: true,
+              loop: true,
+              delay: 40,
+              deleteSpeed: 30,
+            }}
+          />
+        </div>
         
         <motion.p 
           className="mb-8 text-lg font-medium text-transparent bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text"
@@ -243,6 +250,7 @@ const Hero = () => (
     </div>
   </section>
 );
+
 
 
 const About = () => (

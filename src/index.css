@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- IMPROVEMENT: Removed body font-family. This is handled by Tailwind classes in App.jsx --- */
-
 .transition-bg { transition: background-color 0.3s, color 0.3s; }
 
-/* Animated gradient background */
 .animated-gradient {
   background: linear-gradient(270deg, #87cde2, #A7AAB2, #0B0C10, #5277a1);
   background-size: 800% 800%;
@@ -18,16 +15,12 @@
   100% {background-position:0% 50%;}
 }
 
-/* Glassmorphism card */
 .glass-card {
   background: rgba(17, 19, 24, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* --- ADD THIS AT THE END OF index.css --- */
-
-/* Animated Gradient Text Effect */
 .animated-text-gradient {
   background-image: linear-gradient(
     -225deg,
@@ -49,19 +42,17 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Add this to the end of your src/index.css file */
-
 .cursor-blob {
   position: fixed;
   top: 0;
   left: 0;
-  width: 400px; /* Adjust size as needed */
-  height: 400px; /* Adjust size as needed */
+  width: 400px; 
+  height: 400px; 
   background: radial-gradient(circle, rgba(29, 78, 216, 0.2), transparent 70%); /* Adjust color and transparency */
   border-radius: 50%;
-  pointer-events: none; /* This makes sure you can click through the blob */
+  pointer-events: none; 
   transform: translate(-50%, -50%);
-  z-index: 1; /* Make sure it's behind the content you want to interact with */
+  z-index: 1; 
   transition: all 0.1s ease-out;
-  filter: blur(80px); /* Adjust for more or less blur */
+  filter: blur(80px); 
 }
