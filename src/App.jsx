@@ -10,7 +10,7 @@ import CursorBlob from './CursorBlob';
 import profilePicture from './assets/images/IMG_4873.jpg';
 import profilePicture2 from './assets/images/sAp.png';
 import projectAlgoViz from './assets/images/algoviz.png';
-import projectCampusNav from './assets/images/campus-navigator.jpg';
+import projectCampusNav from './assets/images/campus-navigator.png';
 import projectCleanSheet from './assets/images/cleansheet.png';
 
 
@@ -163,113 +163,104 @@ const StatItem = ({ value, label }) => (
 
 // --- Main Components ---
 const Navbar = ({ isDarkMode, toggleTheme }) => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const navItems = ["Home", "About", "Skills", "Experience", "Projects", "Contact"];
-    const handleNavClick = (e, item) => {
-        e.preventDefault();
-        scrollToSection(item.toLowerCase());
-        setMenuOpen(false);
-    };
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navItems = ["Home", "About", "Skills", "Experience", "Projects", "Contact"];
+  const handleNavClick = (e, item) => {
+    e.preventDefault();
+    scrollToSection(item.toLowerCase());
+    setMenuOpen(false);
+  };
 
-    return (
-        <nav className="sticky top-0 z-50 border-b border-gray-200 bg-bgLight/80 dark:bg-bgDark/80 backdrop-blur-lg dark:border-white/5">
-            <div className="relative flex items-center justify-between px-4 py-4 mx-auto max-w-7xl">
-                <span
-                    className="text-3xl font-bold cursor-pointer font-lugrasimo animated-text-gradient"
-                    onClick={() => scrollToSection('home')}
-                >
-                    Samiuzzaman Sahil
-                </span>
-                <div className="flex items-center gap-4">
-                    <button onClick={toggleTheme} className="p-2 transition-colors duration-200 rounded-full text-mutedLight dark:text-muted hover:bg-gray-200/50 dark:hover:bg-white/10" aria-label="Toggle theme">
-                        {isDarkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
-                    </button>
-                    <button className="p-2 text-mutedLight dark:text-muted" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </div>
-                {menuOpen && (
-                    <div className="absolute top-full right-4 mt-2 w-56 bg-surfaceLight dark:bg-surface rounded-xl shadow-lg p-4 flex flex-col gap-4 border border-gray-200 dark:border-[#1C2026]">
-                        {navItems.map(item => (
-                            <a key={item} href={`#${item.toLowerCase()}`} onClick={(e) => handleNavClick(e, item)} className="text-base font-medium transition-all duration-150 cursor-pointer text-mutedLight dark:text-muted hover:text-primary">
-                                {item}
-                            </a>
-                        ))}
-                        <Button href="/samiprofile/resume.pdf" primary newTab className="w-full text-center">Resume</Button>
-                    </div>
-                )}
-            </div>
-        </nav>
-    );
+  return (
+    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-bgLight/80 dark:bg-bgDark/80 backdrop-blur-lg dark:border-white/5">
+      <div className="relative flex items-center justify-between px-4 py-4 mx-auto max-w-7xl">
+        <span 
+          className="text-3xl font-bold cursor-pointer font-lugrasimo animated-text-gradient" 
+          onClick={() => scrollToSection('home')}
+        >
+          Samiuzzaman Sahil
+        </span>
+        <div className="flex items-center gap-4">
+          <button onClick={toggleTheme} className="p-2 transition-colors duration-200 rounded-full text-mutedLight dark:text-muted hover:bg-gray-200/50 dark:hover:bg-white/10" aria-label="Toggle theme">
+            {isDarkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
+          </button>
+          <button className="p-2 text-mutedLight dark:text-muted" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
+        </div>
+        {menuOpen && (
+          <div className="absolute top-full right-4 mt-2 w-56 bg-surfaceLight dark:bg-surface rounded-xl shadow-lg p-4 flex flex-col gap-4 border border-gray-200 dark:border-[#1C2026]">
+            {navItems.map(item => (
+              <a key={item} href={`#${item.toLowerCase()}`} onClick={(e) => handleNavClick(e, item)} className="text-base font-medium transition-all duration-150 cursor-pointer text-mutedLight dark:text-muted hover:text-primary">
+                {item}
+              </a>
+            ))}
+            <Button href="/samiprofile/resume.pdf" primary newTab className="w-full text-center">Resume</Button>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
 };
 
 const Hero = () => (
-    <section id="home" className="flex items-center min-h-screen px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse items-center gap-12 mx-auto max-w-7xl md:flex-row">
-            <div className="w-full text-center md:w-1/2 md:text-left">
-                <div
-                    className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-4xl font-federo animated-text-gradient"
-                >
-                    <Typewriter
-                        options={{
-                            strings: [
-                                "Hi,<br />I design & build digital experiences.",
-                                "Hi,<br />I'm a Full-Stack Developer.",
-                                "Hi,<br />I bring ideas to life with code."
-                            ],
-                            autoStart: true,
-                            loop: true,
-                            delay: 40,
-                            deleteSpeed: 30,
-                        }}
-                    />
-                </div>
+  <section id="home" className="flex items-center min-h-screen px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col-reverse items-center gap-12 mx-auto max-w-7xl md:flex-row">
+      <div className="w-full text-center md:w-1/2 md:text-left">  
+ 
+        <h1 
+          className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-4xl font-federo text-textLight dark:text-textDark"
+        >
+          Hi, I'm <br />
+<span className="font-semibold text-blue-500">Sami </span>          <br />
+<span className="text-2xl lg:text-3xl">I design & build digital experiences.</span>
 
-                <motion.p
-                    className="mb-8 text-lg font-medium text-transparent bg-gradient-to-r from-sky-500 to-purple-500 bg-clip-text"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                    • Computer Science Student
-                    <br />• Aspiring Software Engineer
-                    <br />• Problem-solver
-                </motion.p>
-                <motion.div
-                    className="flex justify-center mb-8 md:justify-start"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                    <div className="flex items-center gap-6">
-                        <a href="https://github.com/SamiSahil" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
-                            <GitHubIcon className="w-8 h-8" />
-                        </a>
-                        <a href="https://linkedin.com/in/samiuzzamansahil" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
-                            <LinkedInIcon className="w-8 h-8" />
-                        </a>
+        </h1>     
+        <motion.p 
+          className="mb-8 text-lg font-medium text-mutedLight dark:text-muted"
+          initial={{ y: 20, opacity: 0 }} 
+          animate={{ y: 0, opacity: 1 }} 
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+         • Computer Science Student 
+          <br />• Aspiring Software Engineer 
+          <br/>• Problem-solver
+        </motion.p>
+                <motion.div 
+          className="flex justify-center mb-8 md:justify-start"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="flex items-center gap-6">
+            <a href="https://github.com/SamiSahil" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
+              <GitHubIcon className="w-8 h-8" />
+            </a>
+            <a href="https://linkedin.com/in/samiuzzamansahil" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
+              <LinkedInIcon className="w-8 h-8" />
+            </a>
+           
+            <a href="https://www.facebook.com/share/19kpWKsBPL/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
+              <FacebookIcon className="w-8 h-8" />
+            </a>
+          </div>
+        </motion.div>
 
-                        <a href="https://www.facebook.com/share/19kpWKsBPL/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 text-mutedLight dark:text-muted hover:text-primary hover:scale-125">
-                            <FacebookIcon className="w-8 h-8" />
-                        </a>
-                    </div>
-                </motion.div>
-
-                <motion.div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
-                    <Button primary href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="text-white border-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-                        See work
-                    </Button>
-                    <Button href="mailto:samiujjaman643@gmail.com">Hire me</Button>
-                </motion.div>
-            </div>
-
-            <motion.div className="flex justify-center w-full md:w-1/2 md:justify-end" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}>
-                <div className="relative w-full max-w-sm">
-                    <img src={profilePicture} alt="Samiuzzaman Sahil" className="object-cover w-full h-auto shadow-2xl rounded-3xl shadow-primary/20" loading="lazy" />
-                </div>
-            </motion.div>
+        <motion.div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
+          <Button primary href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects');}} className="text-white border-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+            See work
+          </Button>
+          <Button href="mailto:samiujjaman643@gmail.com">Hire me</Button>
+        </motion.div>
+      </div>
+     
+      <motion.div className="flex justify-center w-full md:w-1/2 md:justify-end" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}>
+        <div className="relative w-full max-w-sm">
+          <img src={profilePicture} alt="Samiuzzaman Sahil" className="object-cover w-full h-auto shadow-2xl rounded-3xl shadow-primary/20" loading="lazy" />
         </div>
-    </section>
+      </motion.div>
+    </div>
+  </section>
 );
 
 

@@ -20,20 +20,11 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.08);
 }
+/* index.css */
 
 .animated-text-gradient {
-  background-image: linear-gradient(
-    -225deg,
-    #7fc5a88e 0%,
-    #4e7f8b85 29%,
-    #39a1ca 67%,
-    #b3e2e4 100%
-  );
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-background-clip: text; 
-  color: transparent;
-  animation: AnimateTextGradient 5s ease infinite;
+  /* This now applies a static, solid color instead of a gradient */
+  color: #2983cc; /* This is your primary color */
 }
 
 @keyframes AnimateTextGradient {
