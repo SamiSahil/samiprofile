@@ -54,7 +54,7 @@ const PROJECTS = [
         title: "EduSys Pro — School Management System",
         impact: "A comprehensive system for educational institutions, featuring portals for students, teachers, accountants, and staff to streamline school operations.",
         stack: ["React", "Node.js", "MongoDB", "Express"],
-        github: "https://edusyspro.netlify.app/", // Using demo link as no repo was provided
+      
         demo: "https://edusyspro.netlify.app/",
         image: projectAlgoViz // ACTION REQUIRED: Replace with 'projectEduSys' after importing your image
     },
@@ -62,7 +62,7 @@ const PROJECTS = [
         title: "AIC Inventory — Management System",
         impact: "A robust inventory system to track stock levels, customer orders, profitability, and delivery logistics, ensuring efficient business operations.",
         stack: ["React", "Tailwind CSS", "CSS", "JavaScript"],
-        github: "https://github.com/SamiSahil/aicinventory",
+       
         demo: "https://samisahil.github.io/aicinventory/",
         image: projectCampusNav // ACTION REQUIRED: Replace with 'projectInventory' after importing your image
     },
@@ -70,7 +70,7 @@ const PROJECTS = [
         title: "Student Attendance System",
         impact: "A streamlined attendance tool to monitor student presence, absences, and leave records, providing detailed monthly reports for easy tracking.",
         stack: ["React", "CSS", "JavaScript", "Vite"],
-        github: "https://github.com/SamiSahil/attendance",
+
         demo: "https://samisahil.github.io/attendance/",
         image: projectCleanSheet // ACTION REQUIRED: Replace with 'projectAttendance' after importing your image
     },
@@ -273,6 +273,7 @@ const Hero = () => (
             See My Resume
           </a>
             <Button href="https://onexero.netlify.app/" target="_blank">
+            Visit
            Our Company
           </Button>
         </motion.div>
