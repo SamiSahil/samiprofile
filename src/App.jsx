@@ -263,7 +263,7 @@ const Hero = () => (
           <Button href="mailto:samiujjaman643@gmail.com">
             Hire me
           </Button>
-          {/* --- MODIFICATION: Replaced <Button> with a styled <a> tag to fix dark mode color --- */}
+         
           <a 
             href="https://samisahil.github.io/resume/" 
             target="_blank" 
@@ -272,6 +272,9 @@ const Hero = () => (
           >
             See My Resume
           </a>
+            <Button href="https://onexero.netlify.app/" target="_blank">
+           Our Company
+          </Button>
         </motion.div>
       </div>
      
