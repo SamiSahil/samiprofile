@@ -252,26 +252,23 @@ const Hero = () => (
           animate={{ y: 0, opacity: 1 }} 
           transition={{ duration: 0.6, delay: 0.4 }}
         >
+        
           <Button 
-            primary 
-            href="#projects" 
-            onClick={(e) => { e.preventDefault(); scrollToSection('projects');}} 
-            className="text-white border-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+            primary
+            href="mailto:samiujjaman643@gmail.com"
+            className="bg-gradient-to-r from-slate-800 to-gray-900 hover:from-slate-700 hover:to-gray-800"
           >
-            See work
-          </Button>
-          <Button href="mailto:samiujjaman643@gmail.com">
             Hire me
           </Button>
          
-          <a 
+          <Button
+            primary
             href="https://samisahil.github.io/resume/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-6 py-3 font-semibold text-white transition-all duration-200 border-0 rounded-xl hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 bg-sky-500 hover:bg-sky-600 focus:ring-sky-400"
+            newTab
+            className="bg-gradient-to-r from-slate-800 to-gray-900 hover:from-slate-700 hover:to-gray-800"
           >
             See My Resume
-          </a>
+          </Button>
             <Button href="https://onexero.netlify.app/" target="_blank">
             Visit
            Our Company
