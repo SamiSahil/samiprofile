@@ -212,9 +212,9 @@ const Hero = () => (
           className="mb-4 text-3xl font-extrabold leading-tight sm:text-3xl lg:text-4xl font-federo text-textLight dark:text-textDark"
         >
           Hi, I'm <br />
-<span className="font-semibold text-blue-500">Sami </span>          <br />
-<span className="text-2xl lg:text-3xl">I design & build digital experiences.</span>
-
+          <span className="font-semibold text-blue-500">Sami</span>
+          <br />
+          <span className="text-2xl lg:text-3xl">I design & build digital experiences.</span>
         </h1>     
         <motion.p 
           className="mb-8 text-lg font-medium text-mutedLight dark:text-muted"
@@ -246,11 +246,32 @@ const Hero = () => (
           </div>
         </motion.div>
 
-        <motion.div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
-          <Button primary href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects');}} className="text-white border-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+        <motion.div 
+          className="flex flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-start" 
+          initial={{ y: 20, opacity: 0 }} 
+          animate={{ y: 0, opacity: 1 }} 
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Button 
+            primary 
+            href="#projects" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('projects');}} 
+            className="text-white border-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+          >
             See work
           </Button>
-          <Button href="mailto:samiujjaman643@gmail.com">Hire me</Button>
+          <Button href="mailto:samiujjaman643@gmail.com">
+            Hire me
+          </Button>
+          {/* --- MODIFICATION: Replaced <Button> with a styled <a> tag to fix dark mode color --- */}
+          <a 
+            href="https://samisahil.github.io/resume/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-6 py-3 font-semibold text-white transition-all duration-200 border-0 rounded-xl hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 bg-sky-500 hover:bg-sky-600 focus:ring-sky-400"
+          >
+            See My Resume
+          </a>
         </motion.div>
       </div>
      
@@ -308,10 +329,7 @@ const ProjectCard = ({ project }) => (
         <div className="flex items-center gap-3 pt-2 mt-auto sm:gap-4 sm:pt-4">
             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium sm:gap-2 text-primary hover:underline">
                 <ExternalLinkIcon className="w-4 h-4" /> Demo
-            </a>
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-medium sm:gap-2 text-primary hover:underline">
-                <GitHubIcon className="w-4 h-4" /> GitHub
-            </a>
+            </a>          
         </div>
     </div>
 );
