@@ -255,7 +255,7 @@ const Hero = () => (
         
           <Button 
             primary
-            href="mailto:samiujjaman643@gmail.com"
+            href="mailto:samisahil186@gmail.com"
             className="bg-gradient-to-r from-slate-800 to-gray-900 hover:from-slate-700 hover:to-gray-800"
           >
             Hire me
@@ -504,7 +504,7 @@ const Footer = () => (
         <div className="flex justify-center gap-4 mt-4">
             <a href="https://github.com/SamiSahil" target="_blank" rel="noopener noreferrer" className="hover:text-primary"><GitHubIcon className="w-5 h-5" /></a>
             <a href="https://linkedin.com/in/samiuzzamansahil" target="_blank" rel="noopener noreferrer" className="hover:text-primary"><LinkedInIcon className="w-5 h-5" /></a>
-            <a href="mailto:samiujjaman643@gmail.com" className="hover:text-primary"><MailIcon className="w-5 h-5" /></a>
+            <a href="mailto:samisahil186@gmail.com" className="hover:text-primary"><MailIcon className="w-5 h-5" /></a>
         </div>
     </footer>
 );
